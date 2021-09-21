@@ -1,4 +1,5 @@
-# Hello this is a clone of the Battleship game with React
+# Hello Friend
+this is a clone of the Battleship game with React
 <p>
   
 </p>
