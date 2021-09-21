@@ -3,7 +3,7 @@
   
 </p>
 
-Una vez abierto el archivo 
+Una vez abierto el set de archivos
 
 ##### para instalar las dependencias:
 ```
