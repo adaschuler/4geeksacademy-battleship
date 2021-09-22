@@ -1,35 +1,85 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-.grill {
+
+  .container{
+    display:flex;
+  }
+  .box-one{
+    width: 440px;
+    height: 500px;
+    background-color: whitesmoke;
+    margin:20px;
+  }
+  .box-two{
+    width: 440px;
+    height: 500px;
+    background-color:rgb(241, 216, 216);
+    margin:20px;
+  }
+  .littlebox{
+    background-color: rgba(216, 206, 223, 0.808);
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    margin:1px;
+    text-decoration-color:rgba(216, 206, 223, 0.808);
+  }
+  .col{
+    background-color: rgba(216, 206, 223, 0.808);
+    width: 440px;
+    height: 38px;
+    display: inline-block;
     display:flex;
     flex-wrap: wrap;
-    width: 440px;
-    height: 440px;
-}
-.table {
-    border-color:whitesmoke;
-    background-color:rgba(216, 206, 223, 0.808);
-}
-td{
-    width: 40px;
-    height: 40px;
-}
-.square{
+  }
+  .box-ships{
+    width:440px;
+    height:240px;
+    margin: 20px;
+    background-color: whitesmoke;
+  }
+  .square{
     background-color: rgba(79, 67, 88, 0.808);
   }
-.square_active{
+  .square_active{
     background-color: rgba(248, 0, 0, 0.808);
   }
-/* .row {
-    display:flex;
-    flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
-} */
-/* .square{
-   color: grey;
-   background-color: hotpink;
-    margin: 1px;
-    width: 40px;
+  .lancha-container{
+    width:40px;
     height:40px;
-} */
+    background-color: rgba(189, 144, 221, 0.808);
+    margin:10px;
+    display:flex;
+  }
+  .submarino-container{
+    width:120px;
+    height:40px;
+    background-color: rgba(189, 144, 221, 0.808);
+    margin:10px;
+    display:flex;
+  }
+  .crucero-container{
+    width:120px;
+    height:40px;
+    background-color:rgba(189, 144, 221, 0.808);
+    margin:10px;
+    display:flex;
+  }
+  .buque-container{
+    width:160px;
+    height:40px;
+    background-color: rgba(189, 144, 221, 0.808);
+    margin:10px;
+    display:flex;
+  }
+  .portaaviones-container{
+    width:200px;
+    height:40px;
+    background-color: rgba(189, 144, 221, 0.808);
+    margin:10px;
+    display:flex;
+  }
+  .ship div{
+    width:40px;
+    height: 40px;
+  }
