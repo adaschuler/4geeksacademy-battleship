@@ -14,6 +14,7 @@ const Home = () => {
 		// 2 = a sunken part of a ship
 		// 3 = a missed shot
 
+		//Tablero para asociar con divs
 		let gameBoard = [
 			[1, 1, 1, 1, 1, 0, 0, 0, 0, 1],
 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
@@ -27,27 +28,88 @@ const Home = () => {
 			[1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 		];
 
-		let ships = {
-			portaaviones: 5,
-			buque: 4,
-			submarino: 3,
-			crucero: 3,
-			lancha: 1,
-			hundido: 0
-		};
+		let width = 10;
+
+		//Ships para luego ubicarlos al inicio de la partida
+		let ships = [
+			{
+				name: "lancha",
+				space: [[0], [0, width]]
+			},
+			{
+				name: "submarino",
+				space: [
+					[0, 1, 2],
+					[0, width]
+				]
+			},
+			{
+				name: "crucero",
+				space: [
+					[0, 1, 2],
+					[0, width]
+				]
+			},
+			{
+				name: "buque",
+				space: [
+					[0, 1, 2, 3],
+					[0, width]
+				]
+			},
+			{
+				name: "portaaviones",
+				space: [
+					[0, 1, 2, 3, 4],
+					[0, width]
+				]
+			}
+		];
 	};
 
+	// funcion seleccion de un box
 	const fireTorpedo = () => {
 		setShip(!ship);
 	};
 
 	return (
-		<div className="text-center mt-5">
+		<div className="text-center justify-content-center mt-5">
 			<h3>Battleship Clone React.js</h3>
+
 			<div className="container justify-content-center">
+				<div className="box-ships justify-content-center">
+					<h3>Select your ships</h3>
+					<div className="ship lancha-container" draggable="true">
+						<div className="lancha-0"></div>
+					</div>
+					<div className="ship submarino-container" draggable="true">
+						<div className="submarino-0"></div>
+						<div className="submarino-1"></div>
+						<div className="submarino-2"></div>
+					</div>
+					<div className="ship crucero-container" draggable="true">
+						<div className="crucero-0"></div>
+						<div className="crucero-1"></div>
+						<div className="crucero-2"></div>
+					</div>
+					<div className="ship buque-container" draggable="true">
+						<div className="buque-0"></div>
+						<div className="buque-1"></div>
+						<div className="buque-2"></div>
+						<div className="buque-3"></div>
+					</div>
+					<div
+						className="ship portaaviones-container"
+						draggable="true">
+						<div className="portaaviones-0"></div>
+						<div className="portaaviones-1"></div>
+						<div className="portaaviones-2"></div>
+						<div className="portaaviones-3"></div>
+						<div className="portaaviones-4"></div>
+					</div>
+				</div>
 				<div className="box-one justify-content-center">
 					<h3>Player One</h3>
-
 					<div className="col">
 						<div className="littlebox">/</div>
 						<div className="littlebox">1</div>
@@ -63,69 +125,15 @@ const Home = () => {
 					</div>
 					<div className="col">
 						<div className="littlebox">A</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
-						<div className="littlebox">
-							<div
-								onClick={() => fireTorpedo()}
-								className={ship ? "square_active" : "square"}>
-								00
-							</div>
-						</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
+						<div className="littlebox">00</div>
 						<div className="littlebox">
 							<div
 								onClick={() => fireTorpedo()}
@@ -421,39 +429,6 @@ const Home = () => {
 						Rotate ship
 					</button>
 				</p>
-			</div>
-			<div className="justify-content-center">
-				<h3>Select your ships</h3>
-				<div className="box-ships">
-					<div className="ship lancha-container" draggable="true">
-						<div className="lancha-0"></div>
-					</div>
-					<div className="ship submarino-container" draggable="true">
-						<div className="submarino-0"></div>
-						<div className="submarino-1"></div>
-						<div className="submarino-2"></div>
-					</div>
-					<div className="ship crucero-container" draggable="true">
-						<div className="crucero-0"></div>
-						<div className="crucero-1"></div>
-						<div className="crucero-2"></div>
-					</div>
-					<div className="ship buque-container" draggable="true">
-						<div className="buque-0"></div>
-						<div className="buque-1"></div>
-						<div className="buque-2"></div>
-						<div className="buque-3"></div>
-					</div>
-					<div
-						className="ship portaaviones-container"
-						draggable="true">
-						<div className="portaaviones-0"></div>
-						<div className="portaaviones-1"></div>
-						<div className="portaaviones-2"></div>
-						<div className="portaaviones-3"></div>
-						<div className="portaaviones-4"></div>
-					</div>
-				</div>
 			</div>
 			<div>
 				<p>
